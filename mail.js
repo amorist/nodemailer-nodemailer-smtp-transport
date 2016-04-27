@@ -11,7 +11,7 @@
 
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport');
-var config = require('../config/config')
+var config = require('./config')
 transporter = nodemailer.createTransport(smtpTransport({
     service: config.email.service,
     auth: {
@@ -36,7 +36,6 @@ var sendMail = function (recipient, subject, html) {
 
     }, function (error, response) {
         if (error) {
-            //TODO:邮件发送失败处理 待完善消息提示&错误提示功能 待添加日志记录,
             console.log(error);
         }
         console.log('发送成功')
