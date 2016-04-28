@@ -7,11 +7,11 @@
  * 我是Amor,为发骚而生!
  *
  */
-//根据配置文件生成 smtpTransport
 
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport');
 var config = require('./config')
+//根据配置文件生成 smtpTransport
 transporter = nodemailer.createTransport(smtpTransport({
     service: config.email.service,
     auth: {
