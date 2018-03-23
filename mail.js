@@ -8,32 +8,31 @@
  *
  */
 
-var nodemailer = require('nodemailer')
-var smtpTransport = require('nodemailer-smtp-transport');
-var config = require('./config')
+const nodemailer = require('nodemailer')
+const config = require('./config')
 //根据配置文件生成 smtpTransport
-transporter = nodemailer.createTransport(smtpTransport({
-    service: config.email.service,
+transporter = nodemailer.createTransport({
+    host: config.email.host,
+    secureConnection: true, // use SSL
+    port: 465,
+    secure: true, // secure:true for port 465, secure:false for port 587
     auth: {
         user: config.email.user,
-        pass: config.email.pass
+        pass: config.email.password // QQ邮箱需要使用授权码
     }
-}));
+});
 
 /**
  * @param {String} recipient 收件人
  * @param {String} subject 发送的主题
- * @param {String} html 发送的html内容
+ * @param {String} text 发送的内容
  */
-var sendMail = function (recipient, subject, html) {
-
+sendMail = function (recipient, subject, text) {
     transporter.sendMail({
-
-        from: config.email.user,
+        from: '"Amor" <852246538@qq.com>',
         to: recipient,
         subject: subject,
-        html: html
-
+        text: text
     }, function (error, response) {
         if (error) {
             return console.log(error);
@@ -42,4 +41,6 @@ var sendMail = function (recipient, subject, html) {
     });
 }
 
-module.exports = sendMail;
+module.exports = {
+    sendMail
+};

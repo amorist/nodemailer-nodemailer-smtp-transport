@@ -1,0 +1,26 @@
+{
+  "name": "nodemailer-smtp-transport",
+  "version": "1.0.0",
+  "description": "nodejs邮件发送",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amor520/nodemailer-nodemailer-smtp-transport.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mail"
+  ],
+  "author": "Amor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amor520/nodemailer-nodemailer-smtp-transport/issues"
+  },
+  "homepage": "https://github.com/amor520/nodemailer-nodemailer-smtp-transport#readme",
+  "dependencies": {
+    "nodemailer": "^4.6.3"
+  }
+}
