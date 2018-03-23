@@ -36,7 +36,7 @@ var sendMail = function (recipient, subject, html) {
 
     }, function (error, response) {
         if (error) {
-            console.log(error);
+            return console.log(error);
         }
         console.log('发送成功')
     });
