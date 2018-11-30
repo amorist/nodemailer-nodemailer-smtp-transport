@@ -1,4 +1,7 @@
 # nodemailer-nodemailer-smtp-transport
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/amorist/nodemailer-nodemailer-smtp-transport.svg)](https://greenkeeper.io/)
+
 nodemailer使用实例
 
 package version:
